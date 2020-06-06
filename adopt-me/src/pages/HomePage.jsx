@@ -3,7 +3,7 @@ import pet, { ANIMALS } from '@frontendmasters/pet';
 import Results from '../components/Results';
 import useDropdown from '../hooks/useDropdown';
 
-const SearchParams = () => {
+const HomePage = () => {
   const [location, setLocation] = useState('Seatle, WA');
   const [breeds, setBreeds] = useState([]);
   const [animal, AnimalDropdown] = useDropdown('Animal', 'dog', ANIMALS);
@@ -58,4 +58,4 @@ const SearchParams = () => {
   );
 };
 
-export default SearchParams;
+export default HomePage;
