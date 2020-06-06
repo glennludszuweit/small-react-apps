@@ -22,6 +22,7 @@ const SearchParams = () => {
             onBlur={setLocationHandler}
           />
         </label>
+
         <label htmlFor='animal'>
           Animal
           <select
@@ -38,6 +39,7 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
+
         <button>Submit</button>
       </form>
     </div>
