@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 
-const useDropdown = (label, defaultSate, options) => {
-  const { state, setState } = useState(defaultSate);
+const useDropdown = (label, defaultState, options) => {
+  const { state, setState } = useState(defaultState);
   const id = `use-dropdown-${label.replace(' ', '').toLowerCase()}`;
-  const setStateHandler = (e) => setState(e.target.value);
   const Dropdown = () => (
     <label htmlFor={id}>
       {label}
       <select
         id={id}
         value={state}
-        onChange={setStateHandler}
-        onBlur={setStateHandler}
-        disable={options.length === 0}
+        onChange={(e) => setState(e.target.value)}
+        onBlur={(e) => setState(e.target.value)}
+        // disable={options.length === 0}
       >
         <option>All</option>
         {options.map((item) => (
