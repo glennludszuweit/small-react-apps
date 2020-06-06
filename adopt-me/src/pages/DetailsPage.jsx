@@ -2,13 +2,13 @@ import React from 'react';
 import pet from '@frontendmasters/pet';
 
 class DetailsPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: true,
-    };
-  }
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = {
+  //       loading: true,
+  //     };
+  //   }
+  state = { loading: true };
   componentDidMount() {
     pet.animal(this.props.id).then(({ animal }) => {
       this.setState({
@@ -24,7 +24,7 @@ class DetailsPage extends React.Component {
   }
   render() {
     if (this.state.loading) {
-      return <h1>Loading ..</h1>;
+      return <p></p>;
     }
 
     const { animal, breed, location, description, name } = this.state;
