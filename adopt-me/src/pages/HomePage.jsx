@@ -29,8 +29,6 @@ const HomePage = () => {
     }, console.error);
   }, [animal, setBreed, setBreeds]);
 
-  const setLocationHandler = (e) => setLocation(e.target.value);
-
   return (
     <div className='search-params'>
       <form
@@ -45,8 +43,8 @@ const HomePage = () => {
             id='location'
             value={location}
             placeholder='Location'
-            onChange={setLocationHandler}
-            onBlur={setLocationHandler}
+            onChange={(e) => setLocation(e.target.value)}
+            onBlur={(e) => setLocation(e.target.value)}
           />
         </label>
         <AnimalDropdown />
