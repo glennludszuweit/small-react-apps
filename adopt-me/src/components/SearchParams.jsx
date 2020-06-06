@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
-import { ANIMALS } from '@frontendmasters/pet';
+import React, { useState, useEffect } from 'react';
+import pet, { ANIMALS } from '@frontendmasters/pet';
 import useDropdown from '../hooks/useDropdown';
 
 const SearchParams = () => {
   const [location, setLocation] = useState('Seatle, WA');
-  const [animal, AnimalDropdown] = useDropdown('Animal', 'dog', ANIMALS);
-  const [breed, BreedDropdown] = useDropdown('Breed', '', breeds);
   const [breeds, setBreeds] = useState([]);
+  const [animal, AnimalDropdown] = useDropdown('Animal', 'dog', ANIMALS);
+  const [breed, BreedDropdown, setBreed] = useDropdown('Breed', '', breeds);
+
+  useEffect(() => {
+    setBreeds([]);
+    setBreed('');
+    pet.breeds(animal).then(({ breeds }) => {
+      const breedStrings = breeds.map(({ name }) => name);
+      setBreeds(breedStrings);
+    }, console.error);
+  }, [animal, setBreed, setBreeds]);
 
   const setLocationHandler = (e) => setLocation(e.target.value);
 
@@ -24,10 +33,8 @@ const SearchParams = () => {
             onBlur={setLocationHandler}
           />
         </label>
-
         <AnimalDropdown />
         <BreedDropdown />
-
         <button>Submit</button>
       </form>
     </div>
