@@ -27,6 +27,11 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "alias": {
+        "extensions": [".js", ".jsx", ".json"]
+      }
     }
   }
 }
