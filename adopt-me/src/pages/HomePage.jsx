@@ -9,7 +9,7 @@ const HomePage = () => {
   const [location, setLocation] = useState('Seatle, WA');
   const [breeds, setBreeds] = useState([]);
   const [pets, setPets] = useState([]);
-  const [theme] = useContext(ThemeContext);
+  // const [theme] = useContext(ThemeContext);
   const [animal, AnimalDropdown] = useDropdown('Animal', '', ANIMALS);
   const [breed, BreedDropdown, setBreed] = useDropdown('Breed', '', breeds);
 
