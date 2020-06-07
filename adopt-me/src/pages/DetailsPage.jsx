@@ -2,7 +2,7 @@ import React from 'react';
 import pet from '@frontendmasters/pet';
 import Carousel from '../components/Carousel';
 import ErrorBoundary from '../ErrorBoundary';
-// import ThemeContext from '../context/ThemeContext';
+import ThemeContext from '../context/ThemeContext';
 
 class DetailsPage extends React.Component {
   //   constructor(props) {
@@ -39,14 +39,14 @@ class DetailsPage extends React.Component {
         <div>
           <h1>{name}</h1>
           <h2>{`${animal} - ${breed} - ${location}`}</h2>
-          {/*<ThemeContext.Consumer>
+          <ThemeContext.Consumer>
             {(themeHook) => (
               <button style={{ backgroundColor: themeHook[0] }}>
                 Adopt {name}
               </button>
             )}
-            </ThemeContext.Consumer>*/}
-          <button>Adopt {name}</button>
+          </ThemeContext.Consumer>
+          {/*<button>Adopt {name}</button>*/}
           <p>{description}</p>
         </div>
       </div>

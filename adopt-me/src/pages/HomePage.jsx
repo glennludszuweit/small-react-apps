@@ -9,7 +9,7 @@ const HomePage = () => {
   const [location, setLocation] = useState('Seatle, WA');
   const [breeds, setBreeds] = useState([]);
   const [pets, setPets] = useState([]);
-  // const [theme] = useContext(ThemeContext);
+  const [theme, setTheme] = useContext(ThemeContext);
   const [animal, AnimalDropdown] = useDropdown('Animal', '', ANIMALS);
   const [breed, BreedDropdown, setBreed] = useDropdown('Breed', '', breeds);
 
@@ -52,8 +52,23 @@ const HomePage = () => {
         </label>
         <AnimalDropdown />
         <BreedDropdown />
-        <button>Submit</button>
-        {/* <button style={{ backgroundColor: theme }}>Submit</button> */}
+        <label htmlFor='theme'>
+          Button
+          <select
+            id='theme'
+            value={theme}
+            onChange={(e) => setTheme(e.target.value)}
+            onBlur={(e) => setTheme(e.target.value)}
+          >
+            <option value='#C0343F'>Default</option>
+            <option value='peru'>Peru</option>
+            <option value='darkblue'>Dark Blue</option>
+            <option value='meduimorchid'>Medium Orchid</option>
+            <option value='chartreuse'>Chartreuse</option>
+          </select>
+        </label>
+        {/*<button>Submit</button>*/}
+        <button style={{ backgroundColor: theme }}>Submit</button>
       </form>
       <Results pets={pets} />
     </div>

@@ -6,7 +6,7 @@ import DetailsPage from './pages/DetailsPage';
 import ThemeContext from './context/ThemeContext';
 
 const App = () => {
-  const themeHook = useState('darkblue');
+  const themeHook = useState('C0343F');
   return (
     <React.StrictMode>
       <ThemeContext.Provider value={themeHook}>
