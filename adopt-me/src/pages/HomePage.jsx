@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import pet, { ANIMALS } from '@frontendmasters/pet';
 import Results from '../components/Results';
 import useDropdown from '../hooks/useDropdown';
 import ErrorBoundary from '../ErrorBoundary';
+import ThemeContext from '../context/ThemeContext';
 
 const HomePage = () => {
   const [location, setLocation] = useState('Seatle, WA');
   const [breeds, setBreeds] = useState([]);
   const [pets, setPets] = useState([]);
+  const [theme] = useContext(ThemeContext);
   const [animal, AnimalDropdown] = useDropdown('Animal', '', ANIMALS);
   const [breed, BreedDropdown, setBreed] = useDropdown('Breed', '', breeds);
 
@@ -51,6 +53,7 @@ const HomePage = () => {
         <AnimalDropdown />
         <BreedDropdown />
         <button>Submit</button>
+        {/* <button style={{ backgroundColor: theme }}>Submit</button> */}
       </form>
       <Results pets={pets} />
     </div>
