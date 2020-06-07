@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import pet, { ANIMALS } from '@frontendmasters/pet';
 import Results from '../components/Results';
 import useDropdown from '../hooks/useDropdown';
+import ErrorBoundary from '../ErrorBoundary';
 
 const HomePage = () => {
   const [location, setLocation] = useState('Seatle, WA');
   const [breeds, setBreeds] = useState([]);
   const [pets, setPets] = useState([]);
-  const [animal, AnimalDropdown] = useDropdown('Animal', 'dog', ANIMALS);
+  const [animal, AnimalDropdown] = useDropdown('Animal', '', ANIMALS);
   const [breed, BreedDropdown, setBreed] = useDropdown('Breed', '', breeds);
 
   async function requestPets() {
@@ -56,4 +57,10 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default function HomePageWithErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <HomePage {...props} />
+    </ErrorBoundary>
+  );
+}
