@@ -63,7 +63,7 @@ const HomePage = () => {
             <option value='#C0343F'>Default</option>
             <option value='peru'>Peru</option>
             <option value='darkblue'>Dark Blue</option>
-            <option value='meduimorchid'>Medium Orchid</option>
+            <option value='mediumorchid'>Medium Orchid</option>
             <option value='chartreuse'>Chartreuse</option>
           </select>
         </label>

@@ -72,8 +72,26 @@ class DetailsPage extends React.Component {
               <div>
                 <h1>Would you like to adopt {name}?</h1>
                 <div className='buttons'>
-                  <button onClick={this.adopt}>Yes! please.</button>
-                  <button onClick={this.toggleModal}>No! thanks.</button>
+                  <ThemeContext.Consumer>
+                    {(themeHook) => (
+                      <button
+                        onClick={this.adopt}
+                        style={{ backgroundColor: themeHook[0] }}
+                      >
+                        Yes! please.
+                      </button>
+                    )}
+                  </ThemeContext.Consumer>
+                  <ThemeContext.Consumer>
+                    {(themeHook) => (
+                      <button
+                        onClick={this.toggleModal}
+                        style={{ backgroundColor: themeHook[0] }}
+                      >
+                        No! thanks.
+                      </button>
+                    )}
+                  </ThemeContext.Consumer>
                 </div>
               </div>
             </Modal>
