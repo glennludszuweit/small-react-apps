@@ -5,11 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
-    <div className='container-fluid'>
+    <div>
       <nav className='navbar sticky-top navbar-light bg-dark mb-3'>
         <h1 className='navbar-brand text-light'>Movies Lists</h1>
       </nav>
-      <List />
+
+      <div className='container'>
+        <List />
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@
     "year": 2009,
     "amount": "$2,787,965,087",
     "img": {
-      "src": "./images/avatar.jpg",
+      "src": "https://miro.medium.com/max/453/1*zWGSyuGKWgKYu-ZAf5bxiA.jpeg",
       "alt": "avatar"
     },
     "ranking": 1
@@ -18,7 +18,7 @@
     "year": 1997,
     "amount": "$2,187,463,944",
     "img": {
-      "src": "./images/titanic.jpg",
+      "src": "https://static.rogerebert.com/uploads/movie/movie_poster/titanic-1997/large_s2Z25JcBWS9tKAysSKuWyon5lwP.jpg",
       "alt": "titanic"
     },
     "ranking": 2
@@ -30,7 +30,7 @@
     "year": 2015,
     "amount": "$2,068,223,624",
     "img": {
-      "src": "./images/star_wars_the_force_awakens.jpg",
+      "src": "https://images-na.ssl-images-amazon.com/images/I/91xZGOnCFSL._SL1500_.jpg",
       "alt": "star_wars_the_force_awakens"
     },
     "ranking": 3
@@ -42,19 +42,31 @@
     "year": 2018,
     "amount": "$2,048,359,754",
     "img": {
-      "src": "./images/avengers_infinity_war.jpg",
+      "src": "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fmarkhughes%2Ffiles%2F2018%2F04%2FDOLBY-Exclusive-AVENGERS-INFINITY-WAR-poster-1-1200x1753.jpg",
       "alt": "avengers_infinity_war"
     },
     "ranking": 4
   },
   {
     "id": 5,
+    "title": "Skyfall",
+    "distributor": "Eon Productions",
+    "year": 2012,
+    "amount": "$2,048,000,123",
+    "img": {
+      "src": "https://i.pinimg.com/originals/ee/41/7d/ee417d6b4198bdf27c30a7992f3adea1.jpg",
+      "alt": "skyfall"
+    },
+    "ranking": 5
+  },
+  {
+    "id": 6,
     "title": "Jurassic World",
     "distributor": "Universal Pictures",
     "year": 2015,
     "amount": "$1,671,713,208",
     "img": {
-      "src": "./images/jurassic_world.jpg",
+      "src": "https://images-na.ssl-images-amazon.com/images/I/81uXn2KElDL._SL1500_.jpg",
       "alt": "jurassic_world"
     },
     "ranking": 5
