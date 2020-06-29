@@ -7,8 +7,16 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.app {
+.cold {
   background-image: url('https://images.unsplash.com/photo-1485802637741-ca8dcf344e48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2400&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.4s ease-out;
+}
+
+.warm {
+  background-image: url('https://images.unsplash.com/photo-1447601932606-2b63e2e64331?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2400&q=80');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -81,6 +89,7 @@
   display: inline-block;
   padding: 20px 30px;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2);
 }
 
 .weather-box .weather {

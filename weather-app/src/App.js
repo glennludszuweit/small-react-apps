@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 const api = {
@@ -7,6 +7,21 @@ const api = {
 };
 
 function App() {
+  const [query, setQuery] = useState('');
+  const [weather, setWeather] = useState({});
+
+  const search = (e) => {
+    if (e.key === 'Enter') {
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+        .then((res) => res.json())
+        .then((result) => {
+          setWeather(result);
+          setQuery('');
+          console.log(weather);
+        });
+    }
+  };
+
   const dateBuilder = (d) => {
     let months = [
       'January',
@@ -41,25 +56,45 @@ function App() {
   };
 
   return (
-    <div className='app'>
+    <div
+      className={
+        typeof weather.main != 'undefined'
+          ? weather.main.temp > 16
+            ? 'warm'
+            : 'cold'
+          : 'cold'
+      }
+    >
       <div className='main'>
         <div className='search-box'>
           <input
             type='text'
             className='search-bar'
             placeholder='Search City ...'
+            onChange={(e) => setQuery(e.target.value)}
+            value={query}
+            onKeyPress={search}
           />
         </div>
+        {typeof weather.main != 'undefined' ? (
+          <div>
+            <div className='location-box'>
+              <div className='location'>
+                {weather.name}, {weather.sys.country}
+              </div>
+              <div className='date'>{dateBuilder(new Date())}</div>
+            </div>
 
-        <div className='location-box'>
-          <div className='location'>Ratingen, DE</div>
-          <div className='date'>{dateBuilder(new Date())}</div>
-        </div>
-
-        <div className='weather-box'>
-          <div className='temperature'>18°c</div>
-          <div className='weather'>Sunny</div>
-        </div>
+            <div className='weather-box'>
+              <div className='temperature'>
+                {Math.round(weather.main.temp)}°c
+              </div>
+              <div className='weather'>{weather.weather[0].main}</div>
+            </div>
+          </div>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );
