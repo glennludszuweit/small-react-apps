@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .app {
@@ -21,13 +24,13 @@
   );
 }
 
-.main .search-box {
+.search-box {
   margin: 0 0 75px;
   width: 100%;
   padding: 5px;
 }
 
-.main .search-box .search-bar {
+.search-box .search-bar {
   margin: 0 auto;
   display: block;
   min-width: 90%;
@@ -43,6 +46,47 @@
   transition: 0.4s ease;
 }
 
-.main .search-box .search-bar:focus {
+.search-box .search-bar:focus {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.location-box .location {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 50, 0.5);
+}
+
+.location-box .date {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 50, 0.5);
+  margin-top: 20px;
+}
+
+.weather-box {
+  text-align: center;
+}
+
+.weather-box .temperature {
+  color: #fff;
+  font-size: 105px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 50, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 30px auto 10px;
+  display: inline-block;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+.weather-box .weather {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 50, 0.5);
 }
